@@ -37,3 +37,10 @@ class HomeBase:
         :return:
         """
         return "//span[starts-with(text(),'欢迎')]/parent::div/preceding-sibling::div//img"
+
+    def home_user_avatar2(self):
+        """
+        首页用户头像大图2，使用 ancestor
+        :return:
+        """
+        return "//span[text()='我的地址']/ancestor::div[@class='first_card']/div[contains(@class,'avatar')]//img"
