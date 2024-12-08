@@ -23,3 +23,10 @@ class HomeBase:
         :return:
         """
         return "//span[starts-with(text(),'欢迎')]"
+
+    def show_date(self):
+        """
+        首页显示日期
+        :return:
+        """
+        return "//div[text()='我的日历']/following-sibling::div"
