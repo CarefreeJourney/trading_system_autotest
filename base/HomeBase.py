@@ -44,3 +44,5 @@ class HomeBase:
         :return:
         """
         return "//span[text()='我的地址']/ancestor::div[@class='first_card']/div[contains(@class,'avatar')]//img"
+
+
