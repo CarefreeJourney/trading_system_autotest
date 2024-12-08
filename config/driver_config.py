@@ -1,7 +1,8 @@
-
 from selenium import webdriver
-
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.driver_cache import DriverCacheManager
 from common.tools import get_project_path, sep
+
 
 class DriverConfig:
     def driver_config(self):
@@ -23,7 +24,9 @@ class DriverConfig:
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         driver = webdriver.Chrome(
-            executable_path=get_project_path() + sep(["driver_files", "chromedriver"], add_sep_before=True),
+            ChromeDriverManager(url="https://registry.npmmirror.com/-/binary/chromedriver",
+                                latest_release_url="https://registry.npmmirror.com/-/binary/chromedriver/LATEST_RELEASE",
+                                cache_manager=DriverCacheManager(valid_range=365)).install(),
             options=options)
         # 删除所有 cookies
         driver.delete_all_cookies()
