@@ -1,56 +1,30 @@
-# @Version：
-# @Time：2024/10/10 16:54
-# @Author：ChuliLin
-# @Description：
-from webdriver_manager.chrome import ChromeDriverManager
 
 from selenium import webdriver
 
+from common.tools import get_project_path, sep
 
 class DriverConfig:
-    @staticmethod
-    def driver_config():
-        """
-        浏览器驱动
-        :return:
-        """
+    def driver_config(self):
         options = webdriver.ChromeOptions()
-        options.add_argument("disable-infobars")
         # 设置窗口大小
         options.add_argument("window-size=1920,1080")
-        # 无头模式
-        # options.add_argument('--headless')
+        # 关闭左上角的 “chrome正受到自动测试软件的控制 ” 的提示
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        # 解决 selenium 无法访问 https 的问题
+        options.add_argument("--ignore-certificate-errors")
+        # 允许忽略 localhost 上的 TLS/SSL 错误
+        options.add_argument("--allow-insecure-localhost")
+        # 设置为无痕模式
+        options.add_argument("--incognito")
+        # 设置为无头模式，没有界面的情况下，不打开也可以运行自动化测试，在后台进行
+        # options.add_argument("--headless")
         # 解决卡顿
         options.add_argument("--disable-gpu")
-        options.add_argument("--no-sanbox")
-        options.add_argument('--disable-dev-shm-usage')
-        # 解决selenium无法访问https的问题
-        options.add_argument("--ignore-certificate-errors")
-        options.add_argument("--allow-insecure-localhost")
-        # 无痕模式
-        options.add_argument("--incognito")
-        # 去除"chrome正受到自动测试软件的控制"
-        options.add_experimental_option(
-            "excludeSwitches", ["enable-automation"]
-        )
-        # 指定 ChromeDriver 的路径
-        chrome_driver_path = 'C:/Users/20942/AppData/Local/Microsoft/WindowsApps/chromedriver.exe'
-        # chrome_driver_path = '/path/to/chromedriver'
-
-        # 实例化浏览器驱动
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
         driver = webdriver.Chrome(
-            # ChromeDriverManager(url="http://npm.taobao.org/mirrors/chromedriver",
-            #                     latest_release_url="http://npm.taobao.org/mirrors/chromedriver/LATEST_RELEASE",
-            #                     cache_valid_range=365).install(),
-            executable_path=chrome_driver_path,
-            options=options
-        )
-        # 隐性等待时间
-        driver.implicitly_wait(3)
-        # 删除所有cookies
+            executable_path=get_project_path() + sep(["driver_files", "chromedriver"], add_sep_before=True),
+            options=options)
+        # 删除所有 cookies
         driver.delete_all_cookies()
         return driver
-
-
-if __name__ == "__main__":
-    DriverConfig().driver_config()

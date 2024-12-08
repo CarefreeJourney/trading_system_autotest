@@ -4,7 +4,7 @@
 # @Description：
 from time import sleep
 
-from config.driver_config import DriverConfig
+from config.driver_config_old import DriverConfig
 driver = DriverConfig().driver_config()
 driver.get("http://192.168.254.140")
 sleep(2)

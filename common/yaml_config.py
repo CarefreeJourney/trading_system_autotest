@@ -38,6 +38,6 @@ class GetConf:
     def get_username_password(self):
         return self.env['username'], self.env['password']
 
-if __name__ == '__main__':
-    conf = GetConf()
-    print(conf.get_username_password())
+# if __name__ == '__main__':
+#     conf = GetConf()
+#     print(conf.get_username_password())
