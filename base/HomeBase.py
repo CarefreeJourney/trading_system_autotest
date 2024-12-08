@@ -30,3 +30,10 @@ class HomeBase:
         :return:
         """
         return "//div[text()='我的日历']/following-sibling::div"
+
+    def home_user_avator(self):
+        """
+        首页用户头像大图（本地部署中的头像加载失败，因此，只定位到其父节点）
+        :return:
+        """
+        return "//span[starts-with(text(),'欢迎')]/parent::div/preceding-sibling::div"
