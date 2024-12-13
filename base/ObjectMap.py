@@ -5,9 +5,11 @@
 import time
 
 from selenium.common.exceptions import ElementNotVisibleException,WebDriverException
-
+from common.yaml_config import GetConf
 
 class ObjectMap:
+    # 获取基准地址
+    url = GetConf().get_url()
     def element_get(self,driver,locate_type,locator_expression,timeout=10,must_be_visible=False): # 超时时间默认为10s
         """
         单个元素获取
@@ -91,7 +93,8 @@ class ObjectMap:
         :param locator_expression:定位表达式
         :param timeout: 超时时间
         :return:
-        :notice: 可见和找不找得到是两回事，找得到未必可见，但是判断一个元素可不可见的前提必须得找到它
+        :notice: 可见和找不找得到是两回事，找得到未必可见，但是判断一个元素可不可见的前提必须得找到它.
+        如果找不到，说明元素消失了（另一回事）
         """
         if locate_type: # 如果有传入定位方式
             # 开始时间
@@ -143,3 +146,42 @@ class ObjectMap:
             raise ElementNotVisibleException("元素没有出现，定位方式"+locate_type+"定位表达式"+locator_expression)
         else:
             pass
+
+    def element_to_url(self,
+                       driver,
+                       url,
+                       locate_type_disappear=None,
+                       locator_expression_disappear=None,
+                       locate_type_appear=None,
+                       locator_expression_appear=None,
+    ):
+        """
+        跳转地址
+        :param driver:
+        :param url: 只需要传除了基准地址剩余的地址
+        :param locate_type_disappear:
+        :param locator_expression_disappear:
+        :param locate_type_appear:
+        :param locator_expression_appear:
+        :return:
+        :notice: 没有超时时间的参数
+        """
+        try:
+            driver.get(self.url+url)
+            # 等待页面元素都加载完成
+            self.wait_for_ready_state_complete(driver)
+            # 跳转地址后等待元素消失，加载完成后，元素不一定出现或者消失
+            self.element_disappear(driver,
+                                   locate_type_disappear,
+                                   locator_expression_disappear
+            )
+            # 跳转地址后等待元素出现，加载完成后，元素不一定出现或者消失
+            self.element_appear(driver,
+                                locate_type_appear,
+                                locator_expression_appear
+            )
+        except Exception as e: # try 中调用各种方法后出异常
+            print("跳转地址出现异常，异常原因：%s" % e)
+            return False
+        return True # 没有异常，说明跳转地址成功
+
