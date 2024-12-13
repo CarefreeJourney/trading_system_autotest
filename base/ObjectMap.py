@@ -82,3 +82,64 @@ class ObjectMap:
                 # 配合for循环，乘以10的情况
                 time.sleep(0.1)
         raise Exception("打开网页时，页面元素在%s秒后，仍然没有加载完成" % timeout)
+
+    def element_disappear(self,driver,locate_type,locator_expression,timeout=30):
+        """
+        等待页面元素消失
+        :param driver:浏览器驱动
+        :param locate_type: 定位方式类型
+        :param locator_expression:定位表达式
+        :param timeout: 超时时间
+        :return:
+        :notice: 可见和找不找得到是两回事，找得到未必可见，但是判断一个元素可不可见的前提必须得找到它
+        """
+        if locate_type: # 如果有传入定位方式
+            # 开始时间
+            start_ms = time.time()*1000
+            # 设置结束时间
+            stop_ms = start_ms + (timeout * 1000)
+            for x in range(int(timeout*10)):
+                try:
+                    element = driver.find_element(by=locate_type,value=locator_expression)
+                    if element.is_displayed():
+                        # 如果元素可见
+                        now_ms = time.time()*1000
+                        if now_ms >= stop_ms:
+                            break
+                        time.sleep(0.1) # 元素还是没消失，继续循环
+                except Exception:
+                    # 没有获取到，说明消失了
+                    return True
+            raise Exception("元素没有消失，定位方式："+locate_type+"\n定位表达式:"+locator_expression)
+        else:
+            pass
+
+    def element_appear(self,driver,locate_type,locator_expression,timeout=30):
+        """
+        等待页面元素出现
+        :param driver:
+        :param locate_type:
+        :param locator_expression:
+        :param timeout:
+        :return:
+        """
+        if locate_type:
+            start_ms = time.time()*1000
+            stop_ms = start_ms + (timeout * 1000)
+            for x in range(int(timeout*10)):
+                try:
+                    element = driver.find_element(by=locate_type,value=locator_expression)
+                    if element.is_displayed():
+                        return element
+                    else:
+                        raise Exception()
+                except Exception:
+                    now_ms = time.time()*1000
+                    if now_ms >= stop_ms:
+                        break
+                    # 没有找到
+                    time.sleep(0.1)
+                    pass
+            raise ElementNotVisibleException("元素没有出现，定位方式"+locate_type+"定位表达式"+locator_expression)
+        else:
+            pass
