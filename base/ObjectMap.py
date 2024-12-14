@@ -4,7 +4,7 @@
 # @Description：
 import time
 
-from selenium.common.exceptions import ElementNotVisibleException,WebDriverException
+from selenium.common.exceptions import ElementNotVisibleException,WebDriverException,NoSuchElementException
 from common.yaml_config import GetConf
 
 class ObjectMap:
@@ -124,7 +124,7 @@ class ObjectMap:
         :param locate_type:
         :param locator_expression:
         :param timeout:
-        :return:
+        :return: 元素或者抛异常
         """
         if locate_type:
             start_ms = time.time()*1000
@@ -185,3 +185,17 @@ class ObjectMap:
             return False
         return True # 没有异常，说明跳转地址成功
 
+    def element_is_display(self,driver,locate_type,locator_expression):
+        """
+        元素是否显示
+        :param driver:
+        :param locate_type:
+        :param locator_expression:
+        :return:
+        """
+        try:
+            driver.find_element(by=locate_type,value=locator_expression)
+            return True
+        except NoSuchElementException:
+            # 发生异常后，说明页面中没有该元素，返回 False
+            return False
