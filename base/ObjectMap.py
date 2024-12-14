@@ -307,5 +307,64 @@ class ObjectMap:
             raise Exception("元素填值失败")
         return True
 
-
+    def element_click(self,
+                      driver,
+                      locate_type,
+                      locator_expression,
+                      locate_type_disappear=None,
+                      locator_expression_disappear=None,
+                      locate_type_appear=None,
+                      locator_expression_appear=None,
+                      timeout=30
+    ):
+        """
+        元素点击
+        :param driver:
+        :param locate_type:
+        :param locator_expression:
+        :param locate_type_disappear:
+        :param locator_expression_disappear:
+        :param locate_type_appear:
+        :param locator_expression_appear:
+        :return:
+        """
+        # 元素要可见
+        element = self.element_appear(
+            driver=driver,
+            locate_type=locate_type,
+            locator_expression=locator_expression,
+            timeout=timeout
+        )
+        try:
+            # 点击元素
+            element.click()
+        except StaleElementReferenceException:
+            self.wait_for_ready_state_complete(driver=driver)
+            time.sleep(0.06)
+            self.element_appear(
+                driver=driver,
+                locate_type=locate_type,
+                locator_expression=locator_expression,
+                timeout=timeout
+            )
+            element.click()
+        except Exception as e:
+            print("页面出现异常，元素不可点击", e)
+            return False
+        try:
+            # 点击元素后元素出现或消失
+            self.element_appear(
+                driver=driver,
+                locate_type=locate_type_appear,
+                locator_expression=locator_expression_appear
+            )
+            self.element_disappear(
+                driver=driver,
+                locate_type=locate_type_disappear,
+                locator_expression=locator_expression_disappear
+            )
+        except Exception as e:
+            print("等待元素消失或失败",e)
+            return False
+        return True
 
