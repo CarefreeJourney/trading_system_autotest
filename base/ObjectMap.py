@@ -4,7 +4,12 @@
 # @Description：
 import time
 
-from selenium.common.exceptions import ElementNotVisibleException,WebDriverException,NoSuchElementException
+from selenium.common.exceptions import (ElementNotVisibleException,
+                                        WebDriverException,
+                                        NoSuchElementException,
+                                        StaleElementReferenceException)
+from selenium.webdriver.common.keys import Keys
+
 from common.yaml_config import GetConf
 
 class ObjectMap:
@@ -69,7 +74,7 @@ class ObjectMap:
                 # 如果 js 因为 driver 错误执行失败，就直接跳过
                 time.sleep(0.03)
                 return True
-            if read_state == 'complete':
+            if read_state == 'complete': # "complete": 页面及其所有子资源都已加载完毕。
                 # 为什么加休眠？在多浏览器并发跑的情况下，比如你的电脑CPU是6核，
                 # 并发跑用例的时候，同时开启6个浏览器，因为chrome浏览器很占内存
                 # 和CPU，服务器资源就会很快占满，这样浏览器特别容易崩溃，导致用例失败。
@@ -87,7 +92,7 @@ class ObjectMap:
 
     def element_disappear(self,driver,locate_type,locator_expression,timeout=30):
         """
-        等待页面元素消失
+        等待页面元素消失，指在 DOM 中消失
         :param driver:浏览器驱动
         :param locate_type: 定位方式类型
         :param locator_expression:定位表达式
@@ -110,6 +115,37 @@ class ObjectMap:
                         if now_ms >= stop_ms:
                             break
                         time.sleep(0.1) # 元素还是没消失，继续循环
+                    # 如果元素不可见，会继续循环，耗时比 timeout 短
+                except Exception:
+                    # 没有获取到，说明消失了
+                    return True
+            raise Exception("元素没有消失，定位方式："+locate_type+"\n定位表达式:"+locator_expression)
+        else:
+            pass
+
+    def element_disappear2(self,driver,locate_type,locator_expression,timeout=30):
+        """
+        等待页面元素消失，指在 DOM 中消失
+        :param driver:浏览器驱动
+        :param locate_type: 定位方式类型
+        :param locator_expression:定位表达式
+        :param timeout: 超时时间
+        :return:
+        :notice: 可见和找不找得到是两回事，找得到未必可见，但是判断一个元素可不可见的前提必须得找到它.
+        如果找不到，说明元素消失了（另一回事）
+        """
+        if locate_type: # 如果有传入定位方式
+            # 开始时间
+            start_ms = time.time()*1000
+            # 设置结束时间
+            stop_ms = start_ms + (timeout * 1000)
+            for x in range(int(timeout*10)):
+                try:
+                    element = driver.find_element(by=locate_type,value=locator_expression)
+                    now_ms = time.time() * 1000
+                    if now_ms >= stop_ms:
+                        break
+                    time.sleep(0.1)
                 except Exception:
                     # 没有获取到，说明消失了
                     return True
@@ -119,7 +155,7 @@ class ObjectMap:
 
     def element_appear(self,driver,locate_type,locator_expression,timeout=30):
         """
-        等待页面元素出现
+        等待页面元素出现，不仅要在 DOM 中出现，还得显示出来
         :param driver:
         :param locate_type:
         :param locator_expression:
@@ -187,11 +223,13 @@ class ObjectMap:
 
     def element_is_display(self,driver,locate_type,locator_expression):
         """
-        元素是否显示
+        元素是否在当前页面的 HTML 结构中。
         :param driver:
         :param locate_type:
         :param locator_expression:
         :return:
+        :notice: 元素存在于 DOM 中并不一定意味着它显示在页面上。一个元素可以存在于 DOM 中但被隐藏或不可见
+
         """
         try:
             driver.find_element(by=locate_type,value=locator_expression)
@@ -199,3 +237,75 @@ class ObjectMap:
         except NoSuchElementException:
             # 发生异常后，说明页面中没有该元素，返回 False
             return False
+
+    def element_fill_value(self,driver,locate_type,locator_expression,fill_value,timeout):
+        """
+        元素填值
+        :param driver:
+        :param locate_type:
+        :param locator_expression:
+        :param fill_value:
+        :param timeout:
+        :return:
+        """
+        # 元素必须先出现，即可交互
+        element = self.element_appear(
+            driver,
+            locate_type=locate_type,
+            locator_expression=locator_expression,
+            timeout=timeout
+        )
+        try:
+            # 先清除元素中的原有值
+            element.clear()
+        except StaleElementReferenceException:
+            self.wait_for_ready_state_complete(driver=driver)
+            time.sleep(0.06)
+            element = self.element_appear(
+                driver,
+                locate_type=locate_type,
+                locator_expression=locator_expression,
+                timeout=timeout
+
+            )
+            try:
+                element.clear()
+            except Exception:
+                pass
+        except Exception:
+            pass
+        # 填入的值转成字符串
+        if type(fill_value) is int or type(fill_value) is float:
+            fill_value = str(fill_value)
+        try:
+            if not fill_value.endswith("\n"):
+                # 填入的值不是以"\n"结尾
+                element.send_keys(fill_value)
+                self.wait_for_ready_state_complete(driver=driver)
+            else:
+                fill_value = fill_value[:-1] # 去掉"\n"
+                element.send_keys(fill_value)
+                element.send_keys(Keys.RETURN)
+                self.wait_for_ready_state_complete(driver=driver)
+        except StaleElementReferenceException:
+            self.wait_for_ready_state_complete(driver=driver)
+            time.sleep(0.06)
+            element = self.element_appear(driver,
+                                          locate_type=locate_type,
+                                          locator_expression=locator_expression)
+            element.clear()
+            if not fill_value.endswith("\n"):
+                # 填入的值不是以"\n"结尾
+                element.send_keys(fill_value)
+                self.wait_for_ready_state_complete(driver=driver)
+            else:
+                fill_value = fill_value[:-1] # 去掉"\n"
+                element.send_keys(fill_value)
+                element.send_keys(Keys.RETURN)
+                self.wait_for_ready_state_complete(driver=driver)
+        except Exception:
+            raise Exception("元素填值失败")
+        return True
+
+
+
