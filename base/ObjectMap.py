@@ -379,6 +379,26 @@ class ObjectMap:
         element = self.element_get(driver, locate_type, locator_expression)
         return element.send_keys(file_path)
 
+    def switch_into_iframe(self,driver,locate_iframe_type,locator_iframe_expression):
+        """
+        进入 iframe
+        :param driver:
+        :param locate_iframe_type:定位iframe的方式
+        :param locator_iframe_expression: 定位 iframe的表达式
+        :return:
+        """
+        iframe = self.element_get(driver, locate_iframe_type, locator_iframe_expression)
+        # 切换到 iframe 内嵌的页面
+        driver.switch_to.frame(iframe)
+
+    def switch_from_iframe_to_content(self,driver):
+        """
+        从 iframe 切回主文档
+        :param driver:
+        :return:
+        """
+        driver.switch_to.parent_frame()
+
     def switch_window_2_latest_handle(self,driver):
         """
         句柄切换窗口到最新的窗口
