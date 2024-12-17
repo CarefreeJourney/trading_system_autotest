@@ -6,8 +6,8 @@ from common.tools import get_project_path,sep
 from config.driver_config import DriverConfig
 from page.LoginPage import LoginPage
 class TestLogin:
-    def test_login(self):
-        driver = DriverConfig().driver_config()
+    def test_login(self,driver):
+        # driver = DriverConfig().driver_config()
         LoginPage().login(driver, "jay")
         sleep(3)
         # # driver.get("http://192.168.254.140")
@@ -19,7 +19,7 @@ class TestLogin:
         # sleep(1)
         # LoginPage().click_login(driver,"登录")
         # sleep(3)
-        driver.quit()
+        # driver.quit()
 
     def test_login2(self):
         # driver = DriverConfig().driver_config()

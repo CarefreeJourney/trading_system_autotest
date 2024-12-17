@@ -10,8 +10,8 @@ from page.LoginPage import LoginPage
 from page.OrderPage import OrderPage
 
 class TestOrderBuy():
-    def test_order_buy(self):
-        driver = DriverConfig().driver_config()
+    def test_order_buy(self,driver):
+        # driver = DriverConfig().driver_config()
         LoginPage().login(driver,"jay")
         LeftMenuPage().click_level_one_menu(driver,"我的订单")
         sleep(1)
@@ -21,4 +21,4 @@ class TestOrderBuy():
         for tab in tab_list: # tab_list 可做参数化，等到了 pytest 再说
             OrderPage().click_order_tab(driver,tab)
             sleep(2)
-        driver.quit()
+        # driver.quit()
