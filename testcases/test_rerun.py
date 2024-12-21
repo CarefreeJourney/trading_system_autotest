@@ -14,3 +14,4 @@ class TestRerun:
             raise Exception("出错了")
         else:
             print("成功")
+        assert "william" not in "william UI"
