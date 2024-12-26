@@ -5,5 +5,8 @@ user:
   william:
     username: william
     password: 1234abcd!
+  failure:
+    username: william
+    password: william
 #基准地址
 url: http://www.tcpjwtester.top
