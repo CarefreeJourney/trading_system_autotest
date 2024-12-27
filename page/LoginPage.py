@@ -1,5 +1,7 @@
 import time
 
+import requests
+
 from base.LoginBase import LoginBase
 from base.ObjectMap import ObjectMap
 from selenium.webdriver.common.by import By
@@ -92,3 +94,32 @@ class LoginPage(LoginBase,ObjectMap):
         log.info("点击勾选是否需要验证码")
         select_xpath = self.need_captcha()
         return self.element_click(driver,By.XPATH,select_xpath)
+
+    def api_login(self,driver,user):
+        """
+        通过 api 登录
+        :param driver:
+        :param user:
+        :return:
+        """
+        log.info("跳转登录页")
+        self.element_to_url(driver,"/login")
+        username,password = GetConf().get_username_password(user)
+        log.info("用户名："+str(username))
+        log.info("密码："+str(password))
+        url = GetConf().get_url()
+        data={
+            "user":username,
+            "password":password
+        }
+        log.info("通过 api 登录")
+        res = requests.post(url+"/api/user/login",json=data)
+        token = res.json()["data"]["token"]
+        log.info("将 token 写入sessionstrage")
+        js_script="window.sessionStorage.setItem('token','%s');" % token
+        driver.execute_script(js_script)
+        time.sleep(2)
+        log.info("跳转主页")
+        self.element_to_url(driver,"/")
+
+
