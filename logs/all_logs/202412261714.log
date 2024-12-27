@@ -1,0 +1,8 @@
+2024-12-26 17:14:09 - log.py - log - <module> - 51 - DEBUG -I am debug message
+2024-12-26 17:14:09 - log.py - log - <module> - 52 - INFO -I am info message
+2024-12-26 17:14:09 - log.py - log - <module> - 53 - WARNING -I am warning message
+2024-12-26 17:14:09 - log.py - log - <module> - 54 - ERROR -I am error message
+2024-12-26 17:14:09 - log.py - log - <module> - 55 - CRITICAL -I am critical message
+2024-12-26 17:14:52 - log.py - log - <module> - 53 - WARNING -I am warning message
+2024-12-26 17:14:52 - log.py - log - <module> - 54 - ERROR -I am error message
+2024-12-26 17:14:52 - log.py - log - <module> - 55 - CRITICAL -I am critical message
