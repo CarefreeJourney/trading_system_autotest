@@ -28,7 +28,7 @@ def get_log(logger_name):
     # 创建 handler
     # 创建一个 handler 写入日志
     fh = logging.FileHandler(all_log_name)
-    fh.setLevel(logging.ERROR) # 写入日志文件的日志级别，从 ERROR 及以上开始
+    fh.setLevel(logging.INFO) # 写入日志文件的日志级别，从 ERROR 及以上开始
 
     # 定义日志输出格式
     all_log_formatter = logging.Formatter("%(asctime)s - "
@@ -46,10 +46,3 @@ def get_log(logger_name):
     return logger
 
 log = get_log("自动化测试")
-
-if __name__ == '__main__':
-    log.debug("I am debug message")
-    log.info("I am info message") # 常用
-    log.warning("I am warning message")
-    log.error("I am error message") # 常用
-    log.critical("I am critical message")

@@ -1,2 +1,12 @@
-2024-12-27 14-22-40 - LoginPage.py - LoginPage - login_input_value - 16 - ERROR -输入用户名为：william
-2024-12-27 14-22-40 - LoginPage.py - LoginPage - login_input_value - 16 - ERROR -输入密码为：william
+2024-12-27 16-37-40 - logger.py - logger - log - 11 - INFO -====== WebDriver manager ======
+2024-12-27 16-37-41 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
+2024-12-27 16-37-43 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
+2024-12-27 16-37-44 - logger.py - logger - log - 11 - INFO -Driver [C:\Users\20942\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-27 16-37-47 - LoginPage.py - LoginPage - login - 44 - INFO -跳转登录页
+2024-12-27 16-37-59 - LoginPage.py - LoginPage - login - 48 - INFO -需要验证码
+2024-12-27 16-37-59 - LoginPage.py - LoginPage - select_need_captcha - 92 - INFO -点击勾选是否需要验证码
+2024-12-27 16-37-59 - LoginPage.py - LoginPage - login - 55 - INFO -验证码为:no9n
+2024-12-27 16-37-59 - LoginPage.py - LoginPage - login - 58 - INFO -填入验证码
+2024-12-27 16-38-02 - LoginPage.py - LoginPage - login_input_value - 20 - INFO -输入用户名为：周杰伦
+2024-12-27 16-38-02 - LoginPage.py - LoginPage - login_input_value - 20 - INFO -输入密码为：1234abcd!
+2024-12-27 16-38-02 - LoginPage.py - LoginPage - click_login - 31 - INFO -点击登录

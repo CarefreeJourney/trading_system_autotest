@@ -23,6 +23,28 @@ class LoginBase:
         """
         return "//p[text()='登录成功']"
 
+    def need_captcha(self):
+        """
+        是否需要验证码的单选框
+        :return:
+        """
+        # return "//span[@class='el-checkbox__inner']"
+        # 这样定位比较不会因为后期的改动而定位错误/定位不到
+        return "//span[contains(text(),'是否需要验证码')]/preceding-sibling::span/span"
+
+    def captcha(self):
+        """
+        验证码元素
+        """
+        return "//div[@class='el-image']/img"
+
+    def input_captch(self):
+        """
+        输入验证码的输入框
+        :return:
+        """
+        return "//input[contains(@placeholder,'请输入验证码')]"
+
 # if __name__ == '__main__':
 #     print(LoginBase().login_input("用户名"))
     # print(LoginBase().login_input("密码"))
