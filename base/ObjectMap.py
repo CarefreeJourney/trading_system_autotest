@@ -12,6 +12,7 @@ from selenium.webdriver.common.keys import Keys
 from common.yaml_config import GetConf
 from common.tools import get_project_path,sep
 from common.find_img import FindImg
+from common.report_add_img import add_img_path_2_report
 class ObjectMap:
     # 获取基准地址
     url = GetConf().get_url()
@@ -426,6 +427,8 @@ class ObjectMap:
         # 截图并保存图片到 source_img_path
         driver.get_screenshot_as_file(source_img_path)
         time.sleep(3)
+        add_img_path_2_report(source_img_path,"原图")
+        add_img_path_2_report(search_img_path,"需要查找的图片")
         # 在原图中查找是否有指定的图片并返回置信值
         confidence = FindImg().get_confidence(source_img_path,search_img_path)
         return confidence
