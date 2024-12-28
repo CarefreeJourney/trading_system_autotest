@@ -1,16 +1,10 @@
-2024-12-27 17-43-14 - logger.py - logger - log - 11 - INFO -====== WebDriver manager ======
-2024-12-27 17-43-16 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
-2024-12-27 17-43-17 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
-2024-12-27 17-43-18 - logger.py - logger - log - 11 - INFO -Driver [C:\Users\20942\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-27 17-43-21 - LoginPage.py - LoginPage - api_login - 105 - INFO -跳转登录页
-2024-12-27 17-43-29 - LoginPage.py - LoginPage - api_login - 108 - INFO -用户名：周杰伦
-2024-12-27 17-43-29 - LoginPage.py - LoginPage - api_login - 109 - INFO -密码：1234abcd!
-2024-12-27 17-43-29 - LoginPage.py - LoginPage - api_login - 115 - INFO -通过 api 登录
-2024-12-27 17-43-32 - LoginPage.py - LoginPage - api_login - 118 - INFO -将 token 写入sessionstrage
-2024-12-27 17-43-34 - LoginPage.py - LoginPage - api_login - 122 - INFO -跳转主页
-2024-12-27 17-43-39 - LoginPage.py - LoginPage - api_login - 105 - INFO -跳转登录页
-2024-12-27 17-43-39 - LoginPage.py - LoginPage - api_login - 108 - INFO -用户名：william
-2024-12-27 17-43-39 - LoginPage.py - LoginPage - api_login - 109 - INFO -密码：1234abcd!
-2024-12-27 17-43-39 - LoginPage.py - LoginPage - api_login - 115 - INFO -通过 api 登录
-2024-12-27 17-43-42 - LoginPage.py - LoginPage - api_login - 118 - INFO -将 token 写入sessionstrage
-2024-12-27 17-43-44 - LoginPage.py - LoginPage - api_login - 122 - INFO -跳转主页
+2024-12-28 09-39-47 - logger.py - logger - log - 11 - INFO -====== WebDriver manager ======
+2024-12-28 09-39-48 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
+2024-12-28 09-39-49 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
+2024-12-28 09-39-57 - logger.py - logger - log - 11 - INFO -Driver [C:\Users\20942\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-28 09-40-01 - LoginPage.py - LoginPage - login - 46 - INFO -跳转登录页
+2024-12-28 09-40-09 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入用户名为：william
+2024-12-28 09-40-09 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入密码为：1234abcd!
+2024-12-28 09-40-09 - LoginPage.py - LoginPage - click_login - 33 - INFO -点击登录
+2024-12-28 09-40-13 - test_mysql_conn.py - test_mysql_conn - test_mysql - 19 - INFO -666
+2024-12-28 09-40-13 - test_mysql_conn.py - test_mysql_conn - test_mysql - 25 - INFO -666

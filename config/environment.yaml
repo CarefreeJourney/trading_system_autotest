@@ -10,3 +10,10 @@ user:
     password: william
 #基准地址
 url: http://www.tcpjwtester.top
+
+mysql:
+  db: trading_system
+  host: 192.168.254.140
+  password: william
+  port: 3306
+  user: root
