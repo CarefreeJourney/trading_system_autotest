@@ -1,0 +1,14 @@
+2024-12-29 10:29:37 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:29:45 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-29 10:29:45 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:29:45 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:29:47 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:29:49 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:30:17 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:30:17 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：william
+2024-12-29 10:30:17 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:30:17 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:30:19 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:30:21 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:30:24 - TradingMarketPage.py - TradingMarketPage - input_search_input - 18 - INFO -搜索宝贝输入框输入：交易流测试20241229102958
+2024-12-29 10:30:25 - TradingMarketPage.py - TradingMarketPage - click_search - 28 - INFO -点击搜索按钮

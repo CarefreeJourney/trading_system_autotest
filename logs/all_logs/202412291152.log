@@ -1,0 +1,32 @@
+2024-12-29 11:52:58 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 11:53:07 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-29 11:53:07 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 11:53:07 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 11:53:09 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 11:53:11 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 11:53:38 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 11:53:38 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：william
+2024-12-29 11:53:38 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 11:53:38 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 11:53:40 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 11:53:42 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 11:53:47 - TradingMarketPage.py - TradingMarketPage - input_search_input - 18 - INFO -搜索宝贝输入框输入：交易流测试20241229115320
+2024-12-29 11:53:48 - TradingMarketPage.py - TradingMarketPage - click_search - 28 - INFO -点击搜索按钮
+2024-12-29 11:53:50 - TradingMarketPage.py - TradingMarketPage - click_product_card - 39 - INFO -点击交易流测试20241229115320的商品卡片
+2024-12-29 11:53:53 - TradingMarketPage.py - TradingMarketPage - click_i_want - 49 - INFO -点击我想要
+2024-12-29 11:53:57 - TradingMarketPage.py - TradingMarketPage - click_address - 60 - INFO -点击收货地址
+2024-12-29 11:53:58 - TradingMarketPage.py - TradingMarketPage - select_detail_address - 76 - INFO -选择第1个收货地址
+2024-12-29 11:54:02 - TradingMarketPage.py - TradingMarketPage - click_bottom_button - 86 - INFO -点击确定按钮
+2024-12-29 11:54:05 - OrderPage.py - OrderPage - click_order_operation - 30 - INFO -订单标题为:交易流测试20241229115320,点击订单的操作按钮去支付
+2024-12-29 11:54:06 - OrderPage.py - OrderPage - click_order_operation_confirm - 40 - INFO -点击订单操作按钮后的弹框的确认按钮
+2024-12-29 11:54:08 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 11:54:09 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-29 11:54:09 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 11:54:09 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 11:54:11 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 11:54:13 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 11:54:21 - OrderPage.py - OrderPage - click_order_operation - 30 - INFO -订单标题为:交易流测试20241229115320,点击订单的操作按钮去发货
+2024-12-29 11:54:22 - OrderPage.py - OrderPage - click_delivery_logistics - 50 - INFO -点击物流
+2024-12-29 11:54:24 - OrderPage.py - OrderPage - click_select_logistics - 60 - INFO -选择物流公司
+2024-12-29 11:54:25 - OrderPage.py - OrderPage - input_logistics_order_no - 71 - INFO -填入物流单号123456789
+2024-12-29 11:54:26 - OrderPage.py - OrderPage - click_order_operation_confirm - 40 - INFO -点击订单操作按钮后的弹框的确认按钮

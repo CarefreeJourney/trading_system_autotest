@@ -1,0 +1,19 @@
+2024-12-29 10:37:13 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:37:21 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-29 10:37:21 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:37:21 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:37:24 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:37:26 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:37:52 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:37:53 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：william
+2024-12-29 10:37:53 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:37:53 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:37:55 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:37:57 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:38:02 - TradingMarketPage.py - TradingMarketPage - input_search_input - 18 - INFO -搜索宝贝输入框输入：交易流测试20241229103735
+2024-12-29 10:38:02 - TradingMarketPage.py - TradingMarketPage - click_search - 28 - INFO -点击搜索按钮
+2024-12-29 10:38:05 - TradingMarketPage.py - TradingMarketPage - click_product_card - 39 - INFO -点击交易流测试20241229103735的商品卡片
+2024-12-29 10:38:08 - TradingMarketPage.py - TradingMarketPage - click_i_want - 49 - INFO -点击我想要
+2024-12-29 10:38:12 - TradingMarketPage.py - TradingMarketPage - click_address - 60 - INFO -点击收货地址
+2024-12-29 10:38:13 - TradingMarketPage.py - TradingMarketPage - select_detail_address - 76 - INFO -选择第1个收货地址
+2024-12-29 10:38:16 - TradingMarketPage.py - TradingMarketPage - click_bottom_button - 86 - INFO -点击确定按钮

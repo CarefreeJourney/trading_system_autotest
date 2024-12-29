@@ -1,0 +1,6 @@
+2024-12-28 13:44:30 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-28 13:44:38 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-28 13:44:38 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-28 13:44:38 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-28 13:44:40 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-28 13:44:42 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页

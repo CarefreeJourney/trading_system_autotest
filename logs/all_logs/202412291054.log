@@ -1,0 +1,43 @@
+2024-12-29 10:54:27 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:54:37 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-29 10:54:37 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:54:37 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:54:40 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:54:42 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:55:08 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:55:08 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：william
+2024-12-29 10:55:08 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:55:08 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:55:11 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:55:13 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:55:18 - TradingMarketPage.py - TradingMarketPage - input_search_input - 18 - INFO -搜索宝贝输入框输入：交易流测试20241229105450
+2024-12-29 10:55:18 - TradingMarketPage.py - TradingMarketPage - click_search - 28 - INFO -点击搜索按钮
+2024-12-29 10:55:21 - TradingMarketPage.py - TradingMarketPage - click_product_card - 39 - INFO -点击交易流测试20241229105450的商品卡片
+2024-12-29 10:55:24 - TradingMarketPage.py - TradingMarketPage - click_i_want - 49 - INFO -点击我想要
+2024-12-29 10:55:28 - TradingMarketPage.py - TradingMarketPage - click_address - 60 - INFO -点击收货地址
+2024-12-29 10:55:29 - TradingMarketPage.py - TradingMarketPage - select_detail_address - 76 - INFO -选择第1个收货地址
+2024-12-29 10:55:32 - TradingMarketPage.py - TradingMarketPage - click_bottom_button - 86 - INFO -点击确定按钮
+2024-12-29 10:55:36 - OrderPage.py - OrderPage - click_order_operation - 30 - INFO -订单标题为:交易流测试20241229105450,点击订单的操作按钮去支付
+2024-12-29 10:55:37 - OrderPage.py - OrderPage - click_order_operation_confirm - 40 - INFO -点击订单操作按钮后的弹框的确认按钮
+2024-12-29 10:55:39 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:55:39 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：周杰伦
+2024-12-29 10:55:39 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:55:39 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:55:42 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:55:44 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:55:52 - OrderPage.py - OrderPage - click_order_operation - 30 - INFO -订单标题为:交易流测试20241229105450,点击订单的操作按钮去发货
+2024-12-29 10:55:53 - OrderPage.py - OrderPage - click_delivery_logistics - 50 - INFO -点击物流
+2024-12-29 10:55:55 - OrderPage.py - OrderPage - click_select_logistics - 60 - INFO -选择物流公司
+2024-12-29 10:55:56 - OrderPage.py - OrderPage - input_logistics_order_no - 71 - INFO -填入物流单号123456789
+2024-12-29 10:55:57 - OrderPage.py - OrderPage - click_order_operation_confirm - 40 - INFO -点击订单操作按钮后的弹框的确认按钮
+2024-12-29 10:56:02 - LoginPage.py - LoginPage - api_login - 106 - INFO -跳转登录页
+2024-12-29 10:56:02 - LoginPage.py - LoginPage - api_login - 109 - INFO -用户名：william
+2024-12-29 10:56:02 - LoginPage.py - LoginPage - api_login - 110 - INFO -密码：1234abcd!
+2024-12-29 10:56:02 - LoginPage.py - LoginPage - api_login - 116 - INFO -通过 api 登录
+2024-12-29 10:56:05 - LoginPage.py - LoginPage - api_login - 119 - INFO -将 token 写入sessionstrage
+2024-12-29 10:56:07 - LoginPage.py - LoginPage - api_login - 123 - INFO -跳转主页
+2024-12-29 10:56:15 - OrderPage.py - OrderPage - click_order_operation - 30 - INFO -订单标题为:交易流测试20241229105450,点击订单的操作按钮去确认收货
+2024-12-29 10:56:16 - OrderPage.py - OrderPage - click_order_operation_confirm - 40 - INFO -点击订单操作按钮后的弹框的确认按钮
+2024-12-29 10:56:19 - OrderPage.py - OrderPage - click_order_operation - 30 - INFO -订单标题为:交易流测试20241229105450,点击订单的操作按钮去评价
+2024-12-29 10:56:20 - OrderPage.py - OrderPage - click_evaluation - 82 - INFO -评价星级：5星
+2024-12-29 10:56:22 - OrderPage.py - OrderPage - click_evaluation_confirm - 92 - INFO -评价完后点击确定
