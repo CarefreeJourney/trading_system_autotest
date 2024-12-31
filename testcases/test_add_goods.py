@@ -32,6 +32,12 @@ goods_info_list=[
 class TestAddGoods:
     @pytest.mark.parametrize("goods_info",goods_info_list)
     def test_add_goods001(self,driver,goods_info):
+        """
+        测试增加商品
+        :param driver:
+        :param goods_info:
+        :return:
+        """
         # driver = DriverConfig().driver_config()
         LoginPage().login(driver,"jay")
         LeftMenuPage().click_level_one_menu(driver,"产品")

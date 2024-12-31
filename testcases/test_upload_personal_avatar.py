@@ -10,6 +10,11 @@ from page.AccountPage import AccountPage
 from page.LeftMenuPage import LeftMenuPage
 class TestPersonalInfo:
     def test_upload_personal_avatar(self,driver):
+        """
+        上传头像
+        :param driver:
+        :return:
+        """
         # driver = DriverConfig().driver_config()
         LoginPage().login(driver,"jay")
         LeftMenuPage().click_level_one_menu(driver,"账户设置")

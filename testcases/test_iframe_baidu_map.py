@@ -10,6 +10,11 @@ from page.IframeBaiduMapPage import IframeBaiduMapPage
 from page.LeftMenuPage import LeftMenuPage
 class TestIframeBaiduMap():
     def test_iframe_baidu_map(self,driver):
+        """
+        iframe 需要切换句柄
+        :param driver:
+        :return:
+        """
         # driver = DriverConfig().driver_config()
         LoginPage().login(driver,"jay")
         sleep(3)
