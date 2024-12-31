@@ -5,7 +5,7 @@
 import random
 import pytest
 class TestRerun:
-    @pytest.mark.flaky(reruns=3, reruns_delay=1)
+    @pytest.mark.flaky(reruns=1, reruns_delay=1)
     def test_rerun(self):
         num=random.randint(1,3)
         print("num:",num)

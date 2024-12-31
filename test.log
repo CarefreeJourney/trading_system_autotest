@@ -1,9 +1,11 @@
-2024-12-28 10-38-48 - logger.py - logger - log - 11 - INFO -====== WebDriver manager ======
-2024-12-28 10-38-49 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
-2024-12-28 10-38-51 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
-2024-12-28 10-38-54 - logger.py - logger - log - 11 - INFO -Driver [C:\Users\20942\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-28 10-38-58 - LoginPage.py - LoginPage - login - 46 - INFO -跳转登录页
-2024-12-28 10-39-05 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入用户名为：周杰伦
-2024-12-28 10-39-05 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入密码为：1234abcd!
-2024-12-28 10-39-05 - LoginPage.py - LoginPage - click_login - 33 - INFO -点击登录
-2024-12-28 10-39-09 - LoginPage.py - LoginPage - login_assert - 77 - INFO -登录后判断头像
+2024-12-31 13-40-08 - logger.py - logger - log - 11 - INFO -====== WebDriver manager ======
+2024-12-31 13-40-09 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
+2024-12-31 13-40-16 - logger.py - logger - log - 11 - INFO -Get LATEST chromedriver version for google-chrome
+2024-12-31 13-40-17 - logger.py - logger - log - 11 - INFO -Driver [C:\Users\20942\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32/chromedriver.exe] found in cache
+2024-12-31 13-40-20 - LoginPage.py - LoginPage - login - 46 - INFO -跳转登录页
+2024-12-31 13-40-28 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入用户名为：周杰伦
+2024-12-31 13-40-29 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入密码为：1234abcd!
+2024-12-31 13-40-29 - LoginPage.py - LoginPage - click_login - 33 - INFO -点击登录
+2024-12-31 13-40-32 - LoginPage.py - LoginPage - login_assert - 77 - INFO -登录后判断头像
+2024-12-31 13-40-39 - conftest.py - conftest - pytest_runtest_makereport - 42 - INFO -process为：50.0%
+2024-12-31 13-40-47 - conftest.py - conftest - pytest_runtest_makereport - 42 - INFO -process为：100.0%

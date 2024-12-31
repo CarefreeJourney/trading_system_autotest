@@ -424,6 +424,7 @@ class ObjectMap:
         source_img_path = get_project_path()+sep(["img","source_img",img_name],add_sep_before=True)
         # 需要查找的图片的路径
         search_img_path = get_project_path()+sep(["img","assert_img",img_name],add_sep_before=True)
+        time.sleep(3)
         # 截图并保存图片到 source_img_path
         driver.get_screenshot_as_file(source_img_path)
         time.sleep(3)
