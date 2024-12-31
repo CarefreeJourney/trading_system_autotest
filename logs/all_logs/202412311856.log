@@ -1,0 +1,6 @@
+2024-12-31 18:56:25 - LoginPage.py - LoginPage - login - 46 - INFO -跳转登录页
+2024-12-31 18:56:33 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入用户名为：周杰伦
+2024-12-31 18:56:33 - LoginPage.py - LoginPage - login_input_value - 22 - INFO -输入密码为：1234abcd!
+2024-12-31 18:56:33 - LoginPage.py - LoginPage - click_login - 33 - INFO -点击登录
+2024-12-31 18:56:36 - LoginPage.py - LoginPage - login_assert - 77 - INFO -登录后判断头像
+2024-12-31 18:56:43 - conftest.py - conftest - pytest_runtest_makereport - 44 - INFO -process为：100.0%

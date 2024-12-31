@@ -30,7 +30,7 @@ def pytest_runtest_makereport(item,call):# item 是用例
     if report.when == 'call':
         if report.failed:
             # 失败了就截图
-            # add_img_2_report(get_driver,"失败截图",need_sleep=False)
+            add_img_2_report(get_driver,"失败截图",need_sleep=False)
             # 更新失败用例个数
             Process().update_fail()
             # 增加失败用例名称
