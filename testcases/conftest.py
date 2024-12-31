@@ -6,6 +6,8 @@ import pytest
 from config.driver_config import DriverConfig
 from common.report_add_img import add_img_2_report
 from common.process_redis import Process
+from common.yaml_config import GetConf
+from common.ding_talk import send_dingtalk_msg
 from logs.log import log
 # 它允许你定义一些可复用的测试资源或环境设置，这些资源或环境可以在多个测试用例中共享
 @pytest.fixture()
@@ -40,6 +42,17 @@ def pytest_runtest_makereport(item,call):# item 是用例
             pass
         process = Process().get_process()
         log.info("process为："+process)
+
+        webhook = GetConf().get_dingding_webhook()
+        send_dingtalk_msg(
+            webhook,
+            "测试用例："+report.description
+            + "\n测试结果："
+            + report.outcome
+            + "\n自动化测试进度："
+            + process,
+        )
+
 
 # 在所有用例执行前，统计好即将执行的用例总数后会调用该方法
 def pytest_collection_finish(session): # pytest 内置的函数

@@ -41,13 +41,22 @@ class GetConf:
     def get_url(self):
         return self.env['url']
 
+    def get_jenkins(self):
+        return self.env["jenkins"]
+
     def get_mysql_config(self):
         return self.env["mysql"]
 
     def get_redis(self):
         return self.env["redis"]
 
+    def get_dingding_webhook(self):
+        return self.env["dingding_group"]["webhook"]
+
+    def get_qywx_webhook(self):
+        return self.env["qywx_group"]["webhook"]
+
 if __name__ == '__main__':
-    print(GetConf().get_mysql_config())
+    print(GetConf().get_dingding_webhook())
 #     conf = GetConf()
 #     print(conf.get_username_password())

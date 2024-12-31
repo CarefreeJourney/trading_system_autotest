@@ -22,3 +22,12 @@ redis:
   host: 192.168.254.140
   port: 6379
   db: 0
+
+jenkins:
+  url: http://localhost:8080
+
+dingding_group:
+  webhook: https://oapi.dingtalk.com/robot/send?access_token=3d24ac7eb2cdca74904d56bb9ce59c26c09b866af9450312c8358b7ef0b62a8e
+
+qywx_group:
+  webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2282874f-24b0-4395-904e-0190b8370e33
