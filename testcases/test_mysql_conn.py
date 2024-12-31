@@ -12,8 +12,6 @@ class TestMysqlConn:
     def test_mysql(self,driver):
         """
         测试 mysql，判断账户余额和数据库是否一致
-        :param driver:
-        :return:
         """
         with allure.step("登录"):
             LoginPage().login(driver,"william")
